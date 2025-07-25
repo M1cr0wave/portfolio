@@ -1,0 +1,19 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+
+.blog-list {
+    display: grid;
+    /* This single line creates a responsive grid that works across screen sizes */
+    grid-template-columns: repeat(auto-fit, minmax(clamp(250px, 25vw, 320px), 1fr));
+    gap: clamp(12px, 2vw, 25px);
+    padding: clamp(15px, 3vw, 30px);
+    max-width: 1200px;
+    margin: 0 auto;
+    width: 100%;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+/* Smooth transitions for individual cards */
+.blog-list > * {
+    transition: all 0.3s ease;
+}

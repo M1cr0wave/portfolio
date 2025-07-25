@@ -1,0 +1,75 @@
+/*
+	Installed from https://reactbits.dev/default/
+*/
+
+.dock-outer {
+  margin: 0 0.5rem;
+  display: flex;
+  max-width: 100%;
+  align-items: center;
+  transition: pointer-events 0.2s ease;
+}
+
+.dock-panel {
+  position: fixed;
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: flex-end;
+  width: fit-content;
+  gap: 1rem;
+  border-radius: 1rem;
+  background-color: rgba(6, 0, 16, 0.9);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(34, 34, 34, 0.8);
+  padding: 0 0.5rem 0.5rem;
+  z-index: 1000;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dock-item {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 10px;
+  background-color: rgba(6, 0, 16, 0.8);
+  border: 1px solid rgba(34, 34, 34, 0.6);
+  box-shadow:
+    0 4px 6px -1px rgba(0, 0, 0, 0.1),
+    0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  cursor: pointer;
+  outline: none;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.dock-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+
+.dock-label {
+  position: absolute;
+  top: -1.5rem;
+  left: 50%;
+  width: fit-content;
+  white-space: pre;
+  border-radius: 0.375rem;
+  border: 1px solid rgba(34, 34, 34, 0.8);
+  background-color: rgba(6, 0, 16, 0.95);
+  backdrop-filter: blur(8px);
+  padding: 0.125rem 0.5rem;
+  font-size: 0.75rem;
+  color: #fff;
+  transform: translateX(-50%);
+}
+
+.dock-panel{
+  font-family: 'Outfit', sans-serif;
+  font-weight: 685;
+  font-size: 16px;
+  color: rgb(246, 242, 226);
+}

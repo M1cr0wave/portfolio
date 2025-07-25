@@ -1,0 +1,16 @@
+.separator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.separator::before {
+    content: '';
+    width: 50%;
+    height: 5px;
+    background-color: rgb(241, 201, 42);
+    max-width: 300px;
+}

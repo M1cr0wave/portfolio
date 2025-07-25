@@ -1,0 +1,113 @@
+/* Import fonts - removed duplicate and added 'Outfit' */
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;500&display=swap');
+
+
+.blog-square {
+    width: 100%;
+    border-radius: clamp(10px, 2vw, 18px);
+    height: clamp(260px, 65vw, 320px);
+    padding: clamp(20px, 5vw, 25px); /* Tweak padding */
+    color: black;
+    display: flex;
+    flex-direction: column;
+    /* By adding a gap here, we create consistent spacing between children (the image and the content block) */
+    gap: clamp(20px, 4vw, 35px); /* <--- ADD THIS LINE */
+    position: relative;
+    box-sizing: border-box;
+    transition: all 0.3s ease;
+    transform: scale(1);
+    box-shadow: 0 4px 15px rgba(34, 31, 32, 0.3);
+    text-align: left;
+}
+
+.blog-square:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 25px rgba(34, 31, 32, 0.5);
+}
+
+.blog-square.light-theme {
+    color: #333;
+}
+
+.image {
+    width: clamp(40px, 6vw, 65px);
+    height: clamp(40px, 6vw, 65px);
+    align-self: flex-start;
+    transition: all 0.3s ease;
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: clamp(8px, 1.5vw, 15px);
+    transition: all 0.3s ease;
+    font-family: 'Outfit', sans-serif;
+    /* This was pushing the content to the bottom, creating the disconnect. */
+    /* margin-top: auto; */ /* <--- REMOVE THIS LINE */
+}
+
+.title {
+    font-size: clamp(13px, 3.5vw, 22px);
+    font-weight: bold;
+    margin: 0;
+    font-family: 'Paytone One', cursive;
+    text-transform: uppercase;
+    transition: all 0.3s ease;
+}
+
+.description {
+    font-size: clamp(10px, 2.2vw, 16px);
+    margin: 0;
+    line-height: 1.4;
+    transition: all 0.3s ease;
+}
+
+/* Replace the existing .link and .link:hover styles */
+.link {
+    font-size: clamp(14px, 2.2vw, 16px);
+    font-weight: 600; /* Bolder font */
+    color: #000; /* Set a solid color */
+    text-decoration: none; /* Remove underline */
+    background-color: rgba(255, 255, 255, 0.4); /* Semi-transparent background */
+    padding: 10px 16px;
+    border-radius: 999px; /* Pill shape */
+    text-align: center;
+    margin-top: auto; /* Pushes it to the bottom */
+    width: fit-content; /* Makes button only as wide as its content */
+    transition: all 0.3s ease;
+    backdrop-filter: blur(5px); /* Cool glassmorphism effect */
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.link:hover {
+    transform: translateY(-3px);
+    background-color: rgba(255, 255, 255, 0.7);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* For light theme cards, the CTA needs more contrast */
+.light-theme .link {
+    background-color: rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.light-theme .link:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Minor adjustments for very small screens */
+@media (max-width: 400px) {
+    .blog-square {
+        /* Explicitly set a more appropriate height for small phones */
+        height: 280px;
+    }
+
+    .title {
+        font-size: 22px; /* Use a fixed, readable font size */
+    }
+
+    .description, .link {
+        font-size: 14px; /* Adjust description and link font size */
+    }
+}

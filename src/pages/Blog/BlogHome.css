@@ -1,0 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Paytone+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
+
+.blog-home {
+    color: rgb(246, 242, 226);
+    font-family: 'Paytone One', sans-serif;
+    font-size: 40px;
+    text-align: center;
+}
+
+.blog-home-text {
+    font-family: 'Outfit', sans-serif;
+    font-size: 20px;
+    text-align: center;
+    color: rgb(246, 242, 226);
+}
