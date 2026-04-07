@@ -55,11 +55,11 @@ export default function BlogHome() {
             </p>
           </div>
           <aside className="blog-hero-rail font-sans" aria-label="Section index">
-            <p className="blog-rail-label font-mono">Index</p>
+            <p className="blog-rail-label font-mono">Contents</p>
             <ul className="blog-rail-list">
-              <li>01 — Essays</li>
-              <li>02 — Labs</li>
-              <li>03 — Archive</li>
+              <li>Blogs</li>
+              <li>Vulnerbilities</li>
+              <li>Profile</li>
             </ul>
           </aside>
         </div>
