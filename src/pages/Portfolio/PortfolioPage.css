@@ -118,50 +118,6 @@
   gap: 1rem;
 }
 
-.portfolio-inverted {
-  margin-top: 3rem;
-  background: var(--newsprint-ink);
-  color: var(--newsprint-bg);
-  border: 1px solid var(--newsprint-ink);
-}
-
-.portfolio-inverted-inner {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: clamp(2rem, 5vw, 3.5rem) 1rem;
-}
-
-.portfolio-inverted h2 {
-  margin: 0 0 1.5rem;
-  font-size: clamp(1.75rem, 4vw, 2.25rem);
-  font-weight: 800;
-  letter-spacing: 0.02em;
-}
-
-.portfolio-steps {
-  display: grid;
-  gap: 1.25rem;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.portfolio-steps li {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 1rem;
-  align-items: start;
-  font-size: 0.9375rem;
-  line-height: 1.55;
-}
-
-.step-num {
-  font-family: 'JetBrains Mono', monospace;
-  font-size: 0.75rem;
-  font-weight: 700;
-  color: var(--newsprint-accent);
-  letter-spacing: 0.1em;
-}
 
 .portfolio-footer-strip {
   max-width: 1280px;

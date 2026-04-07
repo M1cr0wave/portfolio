@@ -33,12 +33,12 @@ export default function ProfilePage() {
               that snaps — no glassmorphism, no soft gradients.
             </p>
             <div className="portfolio-actions">
-              <a className="btn-primary font-sans" href="mailto:nikhil@example.com">
+              <a className="btn-primary font-sans" href="mailto:njkanade@uwaterloo.ca">
                 Contact
               </a>
               <a
                 className="btn-secondary font-sans"
-                href="https://github.com"
+                href="https://github.com/M1cr0wave"
                 target="_blank"
                 rel="noopener noreferrer"
               >
@@ -46,28 +46,6 @@ export default function ProfilePage() {
               </a>
             </div>
           </div>
-        </div>
-      </section>
-
-      <section className="portfolio-inverted" aria-labelledby="how-heading">
-        <div className="portfolio-inverted-inner">
-          <h2 id="how-heading" className="font-serif">
-            How I work
-          </h2>
-          <ul className="portfolio-steps font-body">
-            <li>
-              <span className="step-num">01</span>
-              <span>Map the surface: routes, caches, auth boundaries, and trust assumptions.</span>
-            </li>
-            <li>
-              <span className="step-num">02</span>
-              <span>Reduce noise: minimal repro, tight notes, reproducible steps.</span>
-            </li>
-            <li>
-              <span className="step-num">03</span>
-              <span>Ship fixes with empathy for users and operators — documentation is part of the patch.</span>
-            </li>
-          </ul>
         </div>
       </section>
 
