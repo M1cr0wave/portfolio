@@ -1,0 +1,176 @@
+.portfolio-page {
+  min-height: 100vh;
+  background: var(--newsprint-bg);
+  color: var(--newsprint-ink);
+  padding-bottom: 8rem;
+}
+
+.portfolio-masthead {
+  border-bottom: 1px solid var(--newsprint-ink);
+}
+
+.portfolio-masthead-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+.portfolio-masthead-inner .font-mono {
+  color: var(--neutral-600);
+}
+
+.portfolio-hero {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) 1rem;
+}
+
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0;
+  border: 1px solid var(--newsprint-ink);
+}
+
+@media (min-width: 1024px) {
+  .portfolio-grid {
+    grid-template-columns: 5fr 7fr;
+  }
+
+  .portfolio-col-left {
+    border-right: 1px solid var(--newsprint-ink);
+  }
+}
+
+.portfolio-col-left,
+.portfolio-col-right {
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.portfolio-name {
+  margin: 0;
+  font-size: clamp(2.75rem, 8vw, 4.5rem);
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+}
+
+.portfolio-tagline {
+  margin: 1rem 0 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--neutral-700);
+}
+
+.portfolio-avatar-wrap {
+  margin-top: 1.5rem;
+  border: 1px solid var(--newsprint-ink);
+  max-width: 200px;
+  aspect-ratio: 1;
+  background: var(--neutral-200);
+  overflow: hidden;
+}
+
+.portfolio-avatar {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1);
+  transition: filter 200ms ease-out;
+}
+
+.portfolio-avatar-wrap:hover .portfolio-avatar {
+  filter: grayscale(1) sepia(0.5);
+}
+
+.portfolio-bio {
+  margin: 0;
+  font-size: clamp(1rem, 2vw, 1.125rem);
+  line-height: 1.65;
+  text-align: justify;
+  color: var(--neutral-600);
+}
+
+.portfolio-bio .drop-cap {
+  float: left;
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(3rem, 8vw, 4rem);
+  line-height: 0.75;
+  padding-right: 0.5rem;
+  font-weight: 700;
+  color: var(--newsprint-accent);
+}
+
+.portfolio-actions {
+  margin-top: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.portfolio-inverted {
+  margin-top: 3rem;
+  background: var(--newsprint-ink);
+  color: var(--newsprint-bg);
+  border: 1px solid var(--newsprint-ink);
+}
+
+.portfolio-inverted-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: clamp(2rem, 5vw, 3.5rem) 1rem;
+}
+
+.portfolio-inverted h2 {
+  margin: 0 0 1.5rem;
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.portfolio-steps {
+  display: grid;
+  gap: 1.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.portfolio-steps li {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1rem;
+  align-items: start;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+}
+
+.step-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--newsprint-accent);
+  letter-spacing: 0.1em;
+}
+
+.portfolio-footer-strip {
+  max-width: 1280px;
+  margin: 2rem auto 0;
+  padding: 1rem;
+  border-top: 1px solid var(--newsprint-muted);
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
+  text-align: center;
+}

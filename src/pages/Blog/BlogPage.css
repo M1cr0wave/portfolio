@@ -1,6 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@685&display=swap');
+.blog-page {
+  min-height: 100vh;
+  background: var(--newsprint-bg);
+  color: var(--newsprint-ink);
+}
 
-.blog-text {
-    font-family: 'Outfit', sans-serif;
-    font-size: 80px;
+/* ── Two-column layout ───────────────────────────────────────────────────── */
+.blog-content-wrap {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  /* No outer cage borders — open, airy layout */
+  padding: 0 1rem;
+}
+
+.blog-toc-col {
+  /* Hairline divider using the muted grey, not ink — light and unobtrusive */
+  border-right: 1px solid var(--newsprint-muted);
+  padding-right: 0;
+}
+
+.blog-article-col {
+  min-width: 0;
+}
+
+/* ── Responsive ─────────────────────────────────────────────────────────── */
+/* Tablet: keep sidebar but shrink it */
+@media (max-width: 1023px) and (min-width: 641px) {
+  .blog-content-wrap {
+    grid-template-columns: 168px 1fr;
+  }
+}
+
+/* Mobile: hide the TOC column, article takes full width */
+@media (max-width: 640px) {
+  .blog-content-wrap {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+
+  .blog-toc-col {
+    display: none;
+  }
+}
+
+/* ── Coming Soon placeholder ────────────────────────────────────────────── */
+.blog-coming-soon {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: clamp(3rem, 10vw, 6rem) 1rem;
+  text-align: center;
+}
+
+.blog-coming-soon-label {
+  margin: 0 0 1.25rem;
+  font-size: 0.65rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--newsprint-accent);
+}
+
+.blog-coming-soon-title {
+  margin: 0 0 1.5rem;
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  font-weight: 900;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+
+.blog-coming-soon-body {
+  font-size: 1.0625rem;
+  line-height: 1.65;
+  color: var(--neutral-600);
 }

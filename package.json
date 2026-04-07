@@ -8,6 +8,7 @@
     "@testing-library/react": "^16.3.0",
     "@testing-library/user-event": "^13.5.0",
     "framer-motion": "^12.23.0",
+    "lucide-react": "^1.7.0",
     "ogl": "^1.0.11",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
@@ -18,9 +19,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "prebuild": "node scripts/fetch-notion.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "fetch-notion": "node scripts/fetch-notion.js"
   },
   "eslintConfig": {
     "extends": [
@@ -39,5 +42,9 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@notionhq/client": "^5.16.0",
+    "dotenv": "^17.4.1"
   }
 }

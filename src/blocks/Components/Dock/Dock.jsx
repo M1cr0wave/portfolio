@@ -31,6 +31,7 @@ function DockItem({
   distance,
   magnification,
   baseItemSize,
+  ariaLabel,
 }) {
   const ref = useRef(null);
   const isHovered = useMotionValue(0);
@@ -65,7 +66,7 @@ function DockItem({
       className={`dock-item ${className}`}
       tabIndex={0}
       role="button"
-      aria-haspopup="true"
+      aria-label={ariaLabel}
     >
       {Children.map(children, (child) => cloneElement(child, { isHovered }))}
     </motion.div>
@@ -129,28 +130,40 @@ export default function Dock({
   const heightRow = useTransform(isHovered, [0, 1], [panelHeight, maxHeight]);
   const height = useSpring(heightRow, spring);
   
-  const opacity = useSpring(isVisible, { 
-    mass: 0.1, 
-    stiffness: 150, 
-    damping: 25 
+  const opacity = useSpring(isVisible, {
+    mass: 0.1,
+    stiffness: 150,
+    damping: 25,
   });
 
   useEffect(() => {
+    isVisible.set(1);
     if (!autoHide) return;
 
-    const handleGlobalMouseMove = (e) => {
-      const distanceFromBottom = window.innerHeight - e.clientY;
-      
-      if (distanceFromBottom <= showDistance) {
-        isVisible.set(1);
-      } else {
+    let lastScrollY = window.scrollY;
+    let scrollTimer = null;
+
+    const handleScroll = () => {
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY) {
         isVisible.set(0);
+      } else {
+        isVisible.set(1);
       }
+
+      lastScrollY = currentScrollY;
+
+      clearTimeout(scrollTimer);
+      scrollTimer = setTimeout(() => isVisible.set(1), 800);
     };
 
-    window.addEventListener('mousemove', handleGlobalMouseMove);
-    return () => window.removeEventListener('mousemove', handleGlobalMouseMove);
-  }, [autoHide, showDistance, isVisible]);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      clearTimeout(scrollTimer);
+    };
+  }, [autoHide, isVisible]);
 
   return (
     <motion.div
@@ -185,6 +198,7 @@ export default function Dock({
             distance={distance}
             magnification={magnification}
             baseItemSize={baseItemSize}
+            ariaLabel={item.label}
           >
             <DockIcon>{item.icon}</DockIcon>
             <DockLabel>{item.label}</DockLabel>

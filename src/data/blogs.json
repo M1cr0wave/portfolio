@@ -1,0 +1,144 @@
+[
+  {
+    "id": "30186979-da7d-80fa-ab42-fab3890f9053",
+    "title": "Dependency 📚 Confusion 😵‍💫 Attacks 🥷",
+    "slug": "dependency-confusion-attacks",
+    "status": "In progress",
+    "publishDate": "2026-02-12",
+    "image": null,
+    "excerpt": "Best Blog on this",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Best Blog on this",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": null
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": "https://medium.com/@alex.birsan/dependency-confusion-4a5d60fec610"
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": []
+      }
+    ]
+  },
+  {
+    "id": "30186979-da7d-806f-8ace-f0ea3fc9f93e",
+    "title": "Web 🕸️ Cache 💻 Deception 🫣",
+    "slug": "web-cache-deception",
+    "status": "Done",
+    "publishDate": "2026-02-02",
+    "image": null,
+    "excerpt": "The two most common attack vectors dealing with web caches are web cache poisoning and web cache deception. I was introduced to this by Nagali when he found the ChatGTP bug and …",
+    "blocks": [
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "The two most common attack vectors dealing with web caches are web cache poisoning and web cache deception. I was introduced to this by ",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": null
+          },
+          {
+            "text": "Nagali",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": "https://www.shockwave.cloud/blog/shockwave-works-with-openai-to-fix-critical-chatgpt-vulnerability"
+          },
+          {
+            "text": " when he found the ChatGTP bug and then a really clever path based cache by ",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": null
+          },
+          {
+            "text": "Harel Security Research",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": "https://nokline.github.io/bugbounty/2024/02/04/ChatGPT-ATO.html"
+          },
+          {
+            "text": ". Please read them after this, since I will be going indepth over the root cause of the bug.",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": null
+          }
+        ]
+      },
+      {
+        "type": "heading_1",
+        "headingId": "how-is-cache-deception-different-from-cache-poisoning",
+        "text": "How is Cache Deception different from Cache Poisoning ?",
+        "content": [
+          {
+            "text": "How is Cache Deception different from Cache Poisoning ?",
+            "bold": true,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": null
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Before we do a deep dive into Web Cache Deception, let's first understand the difference between Cache Deception and Cache Poisoning.",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": null
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": [
+          {
+            "text": "Cache poisoning occurs when an attacker puts malicious things into the cache and when the victim opens that URL they are attacked, while cache deception is when you force the victim to store sensitive information in the cache and this is later read by the attacker.",
+            "bold": false,
+            "italic": false,
+            "code": false,
+            "strikethrough": false,
+            "href": null
+          }
+        ]
+      },
+      {
+        "type": "paragraph",
+        "content": []
+      }
+    ]
+  }
+]

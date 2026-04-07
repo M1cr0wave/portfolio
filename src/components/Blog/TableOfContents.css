@@ -1,0 +1,88 @@
+.toc {
+  position: sticky;
+  top: 2rem;
+  padding: 2rem 1.5rem 2rem 0;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: none; /* hide scrollbar — clean */
+}
+
+.toc::-webkit-scrollbar {
+  display: none;
+}
+
+.toc-label {
+  margin: 0 0 0.875rem;
+  font-size: 0.58rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: var(--neutral-400);
+}
+
+.toc-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+/* No item-level borders — clean open list */
+.toc-item {
+  border: none;
+}
+
+.toc-link {
+  display: block;
+  padding: 0.4rem 0 0.4rem 0.75rem;
+  font-size: 0.775rem;
+  line-height: 1.4;
+  color: var(--neutral-400);
+  text-decoration: none;
+  border-left: 2px solid transparent;
+  transition:
+    color 150ms ease-out,
+    border-color 150ms ease-out;
+}
+
+.toc-link:hover {
+  color: var(--neutral-700);
+  border-left-color: var(--newsprint-muted);
+}
+
+.toc-link:focus-visible {
+  outline: none;
+  box-shadow:
+    0 0 0 2px var(--newsprint-bg),
+    0 0 0 4px var(--newsprint-ink);
+}
+
+.toc-link.toc-active {
+  color: var(--newsprint-ink);
+  border-left-color: var(--newsprint-accent);
+  font-weight: 600;
+}
+
+/* Heading level indentation */
+.toc-level-1 .toc-link {
+  font-weight: 500;
+}
+
+.toc-level-2 .toc-link {
+  font-size: 0.75rem;
+  color: var(--neutral-500);
+}
+
+.toc-level-3 .toc-link {
+  padding-left: 1.25rem;
+  font-size: 0.7rem;
+  color: var(--neutral-400);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .toc-link {
+    transition: none;
+  }
+}

@@ -1,0 +1,17 @@
+.separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem;
+  border-top: 1px solid var(--newsprint-muted);
+  border-bottom: 1px solid var(--newsprint-muted);
+}
+
+.separator-ornament {
+  font-size: 1.25rem;
+  letter-spacing: 0;
+  color: var(--neutral-400);
+}

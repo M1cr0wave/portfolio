@@ -1,36 +1,46 @@
 import './App.css';
-import { BrowserRouter, Routes, Route } from 'react-router-dom';
-import Blog from './pages/Blog/BlogPage';
+import { BrowserRouter, Routes, Route, useNavigate } from 'react-router-dom';
+import BlogPage from './pages/Blog/BlogPage';
 import BlogHome from './pages/Blog/BlogHome';
 import Cursor from './blocks/Components/ProfileCard/Cursor';
 import Dock from './blocks/Components/Dock/Dock';
-import { VscArchive, VscAccount } from 'react-icons/vsc';
+import { Library, UserRound } from 'lucide-react';
 import ProfilePage from './pages/Portfolio/ProfileCard';
 
-const items = [
-  { icon: <VscArchive size={20} />, label: 'Blogs', onClick: () => document.location.href = '/'},
-  { icon: <VscAccount size={20} />, label: 'Portfolio', onClick: () => document.location.href = '/portfolio' },
-];
+function AppLayout() {
+  const navigate = useNavigate();
+
+  const items = [
+    { icon: <Library size={22} strokeWidth={1.5} />, label: 'Blogs', onClick: () => navigate('/') },
+    { icon: <UserRound size={22} strokeWidth={1.5} />, label: 'Portfolio', onClick: () => navigate('/portfolio') },
+  ];
+
+  return (
+    <>
+      <Routes>
+        <Route path='/' element={<BlogHome />} />
+        <Route path='/blog/:id' element={<BlogPage />} />
+        <Route path='/portfolio' element={<ProfilePage />} />
+      </Routes>
+      <Dock
+        items={items}
+        panelHeight={70}
+        baseItemSize={53}
+        magnification={70}
+        autoHide={true}
+        showDistance={100}
+      />
+    </>
+  );
+}
 
 function App() {
   return (
     <div className="App">
       <Cursor />
       <BrowserRouter>
-        <Routes>
-          <Route path='/' element={ <BlogHome />}/>
-          <Route path='/blog' element= { <Blog />} />
-          <Route path='/portfolio' element= { <ProfilePage />} />
-        </Routes>
+        <AppLayout />
       </BrowserRouter>
-      <Dock 
-      items={items}
-      panelHeight={70}
-      baseItemSize={53}
-      magnification={70}
-      autoHide={true}
-      showDistance={100}
-    />
     </div>
   );
 }

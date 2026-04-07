@@ -1,54 +1,70 @@
-/* Cursor.css */
-body, a, button, .link {
-    cursor: none; /* Hide default cursor on body and interactive elements */
+/* Newsprint: sharp crosshair cursor, high contrast on paper background */
+
+body,
+a,
+button,
+.link {
+  cursor: none;
 }
 
 .cursor-dot {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 8px;
-    height: 8px;
-    background-color: white; /* Color is now inverted by the blend mode */
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    transition: width 0.3s ease, height 0.3s ease, opacity 0.3s ease;
-    z-index: 9999;
-    mix-blend-mode: difference; /* Ensures visibility on any background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 6px;
+  background-color: var(--newsprint-accent, #cc0000);
+  border-radius: 0;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition:
+    width 0.2s ease-out,
+    height 0.2s ease-out,
+    opacity 0.2s ease-out,
+    background-color 0.2s ease-out;
+  z-index: 9999;
 }
 
 .cursor-ring {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 40px;
-    height: 40px;
-    /* Changed to solid white; the blend mode will handle the color inversion */
-    border: 1px solid white;
-    /* Removed translucent background for a cleaner look with blend mode */
-    background-color: transparent;
-    border-radius: 50%;
-    transform: translate(-50%, -50%);
-    pointer-events: none;
-    transition: width 0.4s ease, height 0.4s ease, border-color 0.4s ease, background-color 0.4s ease, transform 0.2s ease-out, border-width 0.4s ease;
-    z-index: 9998;
-    mix-blend-mode: difference; /* Ensures visibility on any background */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--newsprint-ink, #111111);
+  border-radius: 0;
+  background-color: transparent;
+  transform: translate(-50%, -50%);
+  pointer-events: none;
+  transition:
+    width 0.2s ease-out,
+    height 0.2s ease-out,
+    border-color 0.2s ease-out,
+    transform 0.2s ease-out;
+  z-index: 9998;
 }
 
-/* --- INTERACTION STATES --- */
-
 .cursor-dot.hovered {
-    opacity: 0;
+  opacity: 0.35;
+  width: 4px;
+  height: 4px;
+  background-color: var(--newsprint-ink, #111111);
 }
 
 .cursor-ring.hovered {
-    width: 60px;
-    height: 60px;
-    /* Make the border slightly thicker on hover for better feedback */
-    border-width: 2px;
+  width: 48px;
+  height: 48px;
+  border-width: 2px;
+  border-color: var(--newsprint-accent, #cc0000);
 }
 
 .cursor-ring.clicked {
-    transform: scale(0.8);
+  transform: translate(-50%, -50%) scale(0.85);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-dot,
+  .cursor-ring {
+    transition: none;
+  }
 }

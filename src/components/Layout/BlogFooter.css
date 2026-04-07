@@ -1,34 +1,49 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit&display=swap');
-
 .footer {
-    color: rgb(246, 242, 226);
-    font-family: 'Outfit', sans-serif;
-    font-size: 18px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    max-width: 800px;
-    margin: 2% auto;
-    padding: 0 20px;
+  color: var(--newsprint-ink);
+  font-size: 0.875rem;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.75rem;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1rem 6rem;
+  border-top: 1px solid var(--newsprint-ink);
 }
 
 .footer p {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+}
+
+.name {
+  font-weight: 600;
+  letter-spacing: 0.02em;
+}
+
+.edition {
+  font-size: 0.65rem;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: var(--neutral-500);
 }
 
 .date {
-    text-align: right;
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--neutral-600);
 }
 
-@media (max-width: 768px) {
-    .footer {
-        flex-direction: column;
-        justify-content: center;
-        text-align: center;
-        gap: 10px;
-    }
-    .date {
-        text-align: left;
-    }
+@media (min-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr auto 1fr;
+  }
+
+  .edition {
+    text-align: center;
+  }
+
+  .date {
+    text-align: right;
+  }
 }
