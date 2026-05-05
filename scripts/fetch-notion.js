@@ -20,14 +20,6 @@
  */
 
 const path = require('path');
-
-// Load .env.local for local dev (dotenv is a devDependency)
-try {
-  require('dotenv').config({ path: path.join(__dirname, '../.env.local'), override: false });
-} catch {
-  // In CI, env vars are injected directly — dotenv absence is fine
-}
-
 const { Client } = require('@notionhq/client');
 const https = require('https');
 const http = require('http');
